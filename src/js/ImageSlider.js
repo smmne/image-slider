@@ -1,12 +1,18 @@
 export default class ImageSlider {
   #currentPosition = 0;
+
   #slideNumber = 0;
+
   #slideWidth = 0;
 
   sliderWrapEl;
+
   sliderListEl;
+
   nextBtnEl;
+
   previousBtnEl;
+
   constructor() {
     this.assignElement();
     this.initSliderNumber();
@@ -14,6 +20,7 @@ export default class ImageSlider {
     this.initSliderListWidth();
     this.addEvent();
   }
+
   assignElement() {
     this.sliderWrapEl = document.getElementById('slider-wrap');
     this.sliderListEl = this.sliderWrapEl.querySelector('#slider');
@@ -37,6 +44,7 @@ export default class ImageSlider {
     this.nextBtnEl.addEventListener('click', this.moveToRight.bind(this));
     this.previousBtnEl.addEventListener('click', this.moveToLeft.bind(this));
   }
+
   moveToRight() {
     this.#currentPosition += 1;
     if (this.#currentPosition === this.#slideNumber) {
